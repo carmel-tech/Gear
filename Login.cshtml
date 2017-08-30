@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Site Map Builder";
+}
+<script type="text/javascript">
+    $(function () {
+        $('#submit').click(function () {
+            $('.status').show();
+            $('.form-sitemap').submit();
+        });
+        //        setTimeout(function () {
+        //            $('.form-sitemap').submit();
+        //        }, 2000);
+
+        //        $('.progress').html("<div style='color:green;width: 30px;height: 15px;'>100%</div>");
+    })
+
+    function ShowStatus() {
+        $('.status').show();
+    }
+</script>
+ <div><a href="/MapSite/LogOut">יציאה ממערכת</a></div>
+ <div style="clear:both;padding-bottom:20px;"></div>
+<div class="container">
+    <form class="form-sitemap" action="/MapSite/SiteMap" method="post">
+    @*<input onclick="ShowStatus();" type="submit" name="submit" value="צור SiteMaps" />*@
+    </form>
+    <a href="javascript:void(0);" id="submit"  onclick="SiteMap">צור SiteMaps</a>
+    <div class="status" style="display:none;">
+      <h2 class="form-signin-heading">נא לחכות לסיום הפעולה!! מייצר קובץ.</h2>
+      <img src="../../Content/animated.gif" />
+   </div>
+
+
+ 
+ <div>
+     <form action="/MapSite/NewXml" method="post">
+         
+        <input type="submit"  value="יצירת xml עבור זאפ" >
+
+     </form>
+    </div>
+
